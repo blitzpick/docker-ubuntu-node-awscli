@@ -5,7 +5,10 @@ MAINTAINER Lee Goolsbee "lee@edgecase.io"
 RUN apt-get update -y && apt-get upgrade -y
 
 # Install some packages we need
-RUN apt-get install -y git curl python python-pip
+RUN apt-get install -y git curl python
+
+# Install latest version of pip
+RUN curl -O https://bootstrap.pypa.io/get-pip.py && python get-pip.py
 
 # Install Node.JS
 RUN cd /usr/local && curl http://nodejs.org/dist/v0.10.40/node-v0.10.40-linux-x64.tar.gz | tar --strip-components=1 -zxf- && cd
