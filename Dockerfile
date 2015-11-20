@@ -12,4 +12,4 @@ RUN cd /usr/local && curl http://nodejs.org/dist/v0.10.40/node-v0.10.40-linux-x6
 RUN npm -g update npm
 
 # Install AWS CLI
-RUN pip install awscli
+RUN pip install awscli awsebcli
