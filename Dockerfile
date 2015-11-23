@@ -5,7 +5,7 @@ MAINTAINER Lee Goolsbee "lee@edgecase.io"
 RUN apt-get update -y && apt-get upgrade -y
 
 # Install some packages we need
-RUN apt-get install -y git curl python
+RUN apt-get install -y build-essential git curl python
 
 # Install latest version of pip
 RUN curl -O https://bootstrap.pypa.io/get-pip.py && python get-pip.py
