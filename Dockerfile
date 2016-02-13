@@ -1,6 +1,8 @@
 FROM ubuntu:14.04
 MAINTAINER Lee Goolsbee "lee@edgecase.io"
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Update packages
 RUN apt-get update -y && apt-get upgrade -y
 
@@ -16,3 +18,6 @@ RUN npm -g update npm
 
 # Install AWS CLI
 RUN pip install awscli awsebcli
+
+# Make sure we land in a shell
+CMD ["/bin/bash"]
