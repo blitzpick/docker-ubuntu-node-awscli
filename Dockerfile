@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Lee Goolsbee "lee@edgecase.io"
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -13,8 +13,7 @@ RUN apt-get install -y build-essential git curl python
 RUN curl -O https://bootstrap.pypa.io/get-pip.py && python get-pip.py
 
 # Install Node.JS
-RUN cd /usr/local && curl http://nodejs.org/dist/v0.10.40/node-v0.10.40-linux-x64.tar.gz | tar --strip-components=1 -zxf- && cd
-RUN npm -g update npm
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && apt-get install -y nodejs
 
 # Install AWS CLI
 RUN pip install awscli awsebcli
