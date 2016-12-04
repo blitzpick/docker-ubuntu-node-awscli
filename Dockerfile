@@ -15,12 +15,6 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && python get-pip.py
 # Install Node.JS
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - && apt-get install -y nodejs
 
-# Update to the latest version of NPM
-run npm install -g npm@latest
-
-# Install the latest version of gulp
-run npm install -g gulp gulp-cli
-
 # Install AWS CLI
 RUN pip install awscli awsebcli
 
